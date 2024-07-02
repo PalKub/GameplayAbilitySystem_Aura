@@ -3,8 +3,6 @@
 #pragma once
 
 #include "CoreMinimal.h"
-#include "AbilitySystemComponent.h"
-#include "AbilitySystem/AuraAttributeSet.h"
 #include "AuraWidgetController.generated.h"
 
 class UAttributeSet;
@@ -42,6 +40,7 @@ class AURA_API UAuraWidgetController : public UObject
 public:
 	UFUNCTION(BlueprintCallable)
 	void SetWidgetControllerParams(const FWidgetControllerParams& WCParams);
+	virtual void BroadcastInitialValues();
 protected:
 
 	UPROPERTY(BlueprintReadOnly, Category = "WidgetController")
