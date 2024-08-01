@@ -1,6 +1,5 @@
 // Copyright Jakub Paluch
 
-
 #include "AbilitySystem/AuraAttributeSet.h"
 #include "AbilitySystemBlueprintLibrary.h"
 #include "GameFramework/Character.h"
