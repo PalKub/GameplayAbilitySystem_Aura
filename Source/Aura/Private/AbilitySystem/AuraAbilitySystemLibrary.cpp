@@ -221,7 +221,7 @@ void UAuraAbilitySystemLibrary::SetIsSuccessfulDebuff(FGameplayEffectContextHand
 {
 	if (FAuraGameplayEffectContext* AuraEffectContext = static_cast<FAuraGameplayEffectContext*>(EffectContextHandle.Get()))
 	{
-		AuraEffectContext->SetIsCriticalHit(bInIsSuccessfulDebuff);
+		AuraEffectContext->SetIsSuccessfulDebuff(bInIsSuccessfulDebuff);
 	}
 }
 
