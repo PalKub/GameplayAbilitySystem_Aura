@@ -70,7 +70,7 @@ void AAuraProjectile::OnSphereOverlap(UPrimitiveComponent* OverlappedComponent, 
 		if (UAbilitySystemComponent* TargetASC = UAbilitySystemBlueprintLibrary::GetAbilitySystemComponent(OtherActor))
 		{
 			DamageEffectParams.TargetAbilitySystemComponent = TargetASC;
-			UAuraAbilitySystemLibrary::ApplyDamageEfect(DamageEffectParams);
+			UAuraAbilitySystemLibrary::ApplyDamageEffect(DamageEffectParams);
 		}
 		
 		Destroy();

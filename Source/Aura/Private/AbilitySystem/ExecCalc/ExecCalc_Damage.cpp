@@ -62,7 +62,7 @@ UExecCalc_Damage::UExecCalc_Damage()
 	RelevantAttributesToCapture.Add(DamageStatics().PhysicalResistanceDef);
 }
 
-void UExecCalc_Damage::DeterminDebuff(const FGameplayEffectCustomExecutionParameters& ExecutionParams, const FGameplayEffectSpec& Spec, FAggregatorEvaluateParameters EvaluationParameters,
+void UExecCalc_Damage::DetermineDebuff(const FGameplayEffectCustomExecutionParameters& ExecutionParams, const FGameplayEffectSpec& Spec, FAggregatorEvaluateParameters EvaluationParameters,
 						const TMap<FGameplayTag, FGameplayEffectAttributeCaptureDefinition>& InTagsToDefs) const
 {
 	const FAuraGameplayTags& GameplayTags = FAuraGameplayTags::Get();
@@ -72,7 +72,7 @@ void UExecCalc_Damage::DeterminDebuff(const FGameplayEffectCustomExecutionParame
 		const FGameplayTag& DamageType = Pair.Key;
 		const FGameplayTag& DebuffType = Pair.Value;
 		const float TypeDamage = Spec.GetSetByCallerMagnitude(DamageType, false, -1.f);
-		if (TypeDamage > -5.f) // .5 for floating point [im]precision
+		if (TypeDamage > -.5f) // .5 padding for floating point [im]precision
 		{
 			// Determine if there was a successful debuff
 			const float SourceDebuffChance = Spec.GetSetByCallerMagnitude(GameplayTags.Debuff_Chance, false, -1.f);
@@ -146,7 +146,7 @@ void UExecCalc_Damage::Execute_Implementation(const FGameplayEffectCustomExecuti
 	EvaluationParameters.TargetTags = TargetTags;
 
 	// Debuff
-	DeterminDebuff(ExecutionParams, Spec, EvaluationParameters, TagsToCaptureDefs);
+	DetermineDebuff(ExecutionParams, Spec, EvaluationParameters, TagsToCaptureDefs);
 
 	// Get Damage Set by Caller Magnitude
 	float Damage = 0.f;

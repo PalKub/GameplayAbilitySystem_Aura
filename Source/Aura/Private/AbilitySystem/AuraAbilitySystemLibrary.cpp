@@ -288,7 +288,7 @@ bool UAuraAbilitySystemLibrary::IsNotFriend(AActor* FirstActor, AActor* SecondAc
 	return !bFriends;
 }
 
-FGameplayEffectContextHandle UAuraAbilitySystemLibrary::ApplyDamageEfect(const FDamageEffectParams& DamageEffectParams)
+FGameplayEffectContextHandle UAuraAbilitySystemLibrary::ApplyDamageEffect(const FDamageEffectParams& DamageEffectParams)
 {
 	const FAuraGameplayTags& GameplayTags = FAuraGameplayTags::Get();
 	const AActor* SourceAvatarActor = DamageEffectParams.SourceAbilitySystemComponent->GetAvatarActor();
