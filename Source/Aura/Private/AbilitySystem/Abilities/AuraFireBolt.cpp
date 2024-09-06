@@ -58,7 +58,6 @@ FString UAuraFireBolt::GetDescription(int32 Level)
 
 			// Damage
 			"<Damage>%d</><Default> fire damage with"
-			
 			" a chance to burn</>"),
 
 			// Values
@@ -92,7 +91,6 @@ FString UAuraFireBolt::GetNextLevelDescription(int32 Level)
 
 			// Damage
 			"<Damage>%d</><Default> fire damage with"
-			
 			" a chance to burn</>"),
 
 			// Values
