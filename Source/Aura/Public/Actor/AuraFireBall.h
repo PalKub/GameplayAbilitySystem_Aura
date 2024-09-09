@@ -21,6 +21,9 @@ public:
 	UPROPERTY(BlueprintReadOnly)
 	TObjectPtr<AActor> ReturnToActor;
 
+	UPROPERTY(BlueprintReadWrite)
+	FDamageEffectParams ExplosionDamageParams;
+
 	UFUNCTION(BlueprintCallable)
 	void EmptyIgnoreList();
 
