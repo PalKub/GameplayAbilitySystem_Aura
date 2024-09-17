@@ -31,8 +31,11 @@ public:
 	UPROPERTY(EditDefaultsOnly)
 	int32 CustomDepthStencilOverride = CUSTOM_DEPTH_TAN;
 
-	UPROPERTY(BlueprintReadOnly, SaveGame)
+	UPROPERTY(BlueprintReadWrite, SaveGame)
 	bool bReached = false;
+
+	UPROPERTY(EditAnywhere)
+	bool bBindOverlapCallback = true;
 protected:
 
 	UFUNCTION()
@@ -49,6 +52,7 @@ protected:
 	UFUNCTION(BlueprintImplementableEvent)
 	void CheckpointReached(UMaterialInstanceDynamic* DynamicMaterialInstance);
 
+	UFUNCTION(BlueprintCallable)
 	void HandleGlowEffects();
 	
 	UPROPERTY(VisibleAnywhere, BlueprintReadOnly)
